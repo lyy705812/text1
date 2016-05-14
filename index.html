@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{margin-top:30px; margin-left:10px; position:relative;}
+			#box div{width:40px; height:40px; background:#7CFC00; position:absolute; line-height:40px; text-align:center; color:#fff;}
+		</style>
+	</head>
+	<body>
+		<input id = "btn" type="button" value = "生成V字形"/>
+		<div id="box">
+			<!--<div>0</div>-->
+		</div>
+		<script>
+			var oBtn = document.getElementById("btn");
+			var oBox = document.getElementById("box");
+			var aBox = oBox.getElementsByTagName("div");
+//			alert(aBox)
+			var str = "";
+//			for(var i = 0; i<aBox.length; i++)
+//			{
+//				if(i<aBox.length/2)
+//				{
+//					str += "<div style = 'left:"+(i*50)+"px; top:"+(i*50)+"px;'>"+i+"</div>"
+//				}else
+//				{
+//					str += "<div style = 'left:"+(i*50)+"px; top:"+(Math.floor((aBox.length-(i+1))*50))+"px;'>"+i+"</div>"
+//				}
+//			}
+//			oBtn.onclick = function()
+//			{
+//				oBox.innerHTML = str;
+//			}
+			for(var i = 0; i<5; i++)
+			{
+				if(i<5/2)
+				{
+					str += "<div style = 'left:"+(i*50)+"px; top:"+(i*50)+"px;'>"+i+"</div>"
+				}else
+				{
+					str += "<div style = 'left:"+(i*50)+"px; top:"+(Math.floor((5-(i+1))*50))+"px;'>"+i+"</div>"
+				}
+			}
+			oBtn.onclick = function()
+			{
+				oBox.innerHTML = str;
+			}
+		</script>
+	</body>
+</html>
